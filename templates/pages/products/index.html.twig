@@ -3,5 +3,110 @@
 {% block title %}HoussArtGallery- Nos Products{% endblock %}
 
 {% block body %}
+<style>
 
+    .txt-w {
+        text-decoration: none;
+        color: white;
+    }
+    .table{
+        box-shadow:10px 10px 10px black;
+    }
+    .navigation{
+        text-shadow:var(--main);
+        text-color:var(--main);
+    }
+    .btn-info{
+        padding: 0.1rem;
+        background: blue;
+    }
+    .btn-warning{
+        padding: 0.1rem;
+        background: yellow;
+    }
+    .banner{
+        height:800px;
+        background:linear-gradient(rgba(0, 0, 0,.1),rgba(0, 0, 0,.1)),url(images/fondCRUD.jpg) center center fixed no-repeat;
+        background-size:cover;
+    }
+    .Produits{
+        text-shadow: 1rem 1rem 1rem black;
+    }
+
+</style>
+
+<body>
+    <div class="container-fluid banner py-5">
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center mb-4">
+            <div class="Produits col-12 d-flex justify-content-center align-items-center text-white text-center">
+                <h1 class=" heading">NOS PRODUITS</h1>
+            </div>
+          
+                {# read and display just one flash message type #}
+               {% for message in app.flashes('success') %}
+               <div class="alert alert-success mt-4">
+                {{ message}}
+               </div>
+               {% endfor %}
+
+
+
+            <div class="col-10 count mt-4 text-white">
+                <h2>Il y'a {{ products.getTotalItemCount}} produits au total.</h2>
+            </div>
+
+
+            <div class="col-10 d-flex justify-content-center align-items-center text-center ">
+                <table class="table table-light table-striped table-hover">
+                    <thead class="text-danger">
+                        <tr>
+                            <th>Numéro</th>
+                            <th>Nom</th>
+                            <th>Prix</th>
+                            <th>Dimention</th>
+                            <th>Artiste</th>
+                            <th>Catégorie</th>
+                            <th>Public</th>
+                            <th>Date de Création</th>
+                            {# <th>Edition</th>
+                            <th>Suppression</th> #}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for products in products %}
+                           <tr>
+                                <th  class="d-flex justify-content-center align-items-center text-danger">{{ products.id }}</th>
+                                <th>{{ products.name }}</th>
+                                <td>{{ products.price }}</td>
+                                <td>{{ products.size }}</td>
+                                <td>{{ products.artist }}</td>
+                                <td>{{ products.category }}</td>
+                                <td>{{ products.isPublic }}</td>
+                                <td>{{ products.createdAt|date('d/m/Y') }}</td>
+                                <td>
+                                    {# <a href="{{ path('products.edit', { id:products.id }) }}">Modifier</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('products.delete', { id:products.id }) }}">supprimer</a>
+                                </td> #}
+                           </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+            {# <div class="Produits col-10">
+                <a href="{{ path('products.new') }}" class="btn btn-primary">
+                    Nouveau Produit !
+                </a>
+            </div> #}
+
+            <div class="pagination pagination-lg col-10 d-flex justify-content-center align-items-center mb-4 pb-5">
+                {{ knp_pagination_render(products) }}
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
 {% endblock %}
