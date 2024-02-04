@@ -40,6 +40,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center mb-4">
             <div class="Produits col-12 d-flex justify-content-center align-items-center text-white text-center">
+            {% if not products.items is same as ([]) %}
                 <h1 class=" heading">NOS PRODUITS</h1>
             </div>
           
@@ -105,6 +106,10 @@
             <div class="pagination pagination-lg col-10 d-flex justify-content-center align-items-center mb-4 pb-5">
                 {{ knp_pagination_render(products) }}
             </div>
+            {% else %}
+            <h4> Il n'y a pas de produits </H4>
+            {% endif %}
+
         </div>
     </div>
     </div>
