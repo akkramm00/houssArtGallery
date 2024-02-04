@@ -69,8 +69,8 @@
                             <th>Catégorie</th>
                             <th>Public</th>
                             <th>Date de Création</th>
-                            {# <th>Edition</th>
-                            <th>Suppression</th> #}
+                            <th>Edition</th>
+                            <th>Suppression</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,11 +85,11 @@
                                 <td>{{ products.isPublic }}</td>
                                 <td>{{ products.createdAt|date('d/m/Y') }}</td>
                                 <td>
-                                    {# <a href="{{ path('products.edit', { id:products.id }) }}">Modifier</a>
+                                    {# <a href="{{ path('products.edit', { id:products.id }) }}">Modifier</a> #}
                                 </td>
                                 <td>
-                                    <a href="{{ path('products.delete', { id:products.id }) }}">supprimer</a>
-                                </td> #}
+                                    {# <a href="{{ path('products.delete', { id:products.id }) }}">supprimer</a> #}
+                                </td>
                            </tr>
                         {% endfor %}
                     </tbody>

@@ -12,6 +12,14 @@ use Knp\Component\Pager\PaginatorInterface;
 class ProductsController extends AbstractController
 {
     #[Route('/products', name: 'products', methods: ['GET'])]
+    /**
+     * This controller dispaly all products
+     *
+     * @param ProductsRepository $repository
+     * @param PaginatorInterface $paginator
+     * @param Request $request
+     * @return Response
+     */
     public function index(
         ProductsRepository $repository,
         PaginatorInterface $paginator,
