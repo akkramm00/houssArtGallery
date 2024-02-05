@@ -4,26 +4,6 @@
 
 {% block body %}
 <style>
-
-    .txt-w {
-        text-decoration: none;
-        color: white;
-    }
-    .table{
-        box-shadow:10px 10px 10px black;
-    }
-    .navigation{
-        text-shadow:var(--main);
-        text-color:var(--main);
-    }
-    .btn-info{
-        padding: 0.1rem;
-        background: blue;
-    }
-    .btn-warning{
-        padding: 0.1rem;
-        background: yellow;
-    }
     .banner{
         height:800px;
         background:linear-gradient(rgba(0, 0, 0,.1),rgba(0, 0, 0,.1)),url(images/fondCRUD.jpg) center center fixed no-repeat;
@@ -51,12 +31,9 @@
                </div>
                {% endfor %}
 
-
-
             <div class="col-10 count mt-4 text-white">
-                <h2>Il y'a {{ products.getTotalItemCount}} produits au total.</h2>
+                <h2 class="fs-5 py-2">Il y'a {{ products.getTotalItemCount}} produits au total.</h2>
             </div>
-
 
             <div class="col-10 d-flex justify-content-center align-items-center text-center ">
                 <table class="table table-light table-striped table-hover">

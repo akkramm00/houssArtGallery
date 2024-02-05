@@ -3,8 +3,82 @@
 {% block title %}HoussArtGallery- Accueil !{% endblock %}
 
 {% block body %}
+<style>
+    .banner{
+        height:800px;
+        background:linear-gradient(rgba(0, 0, 0,.6),rgba(0, 0, 0,.6)),url(https://cdn.pixabay.com/photo/2016/09/04/12/38/living-room-1643855_1280.jpg) center center fixed no-repeat;
+        background-size:cover;
+    }
+    .banner h2{
+        font-size: 7rem;
+        font-weight: bold;
+        font-family: 'Ruthie', cursive;
+    }
+    .banner h1{
+        font-size: 10rem;
+        color: white;
+        font-family: 'Abril Fatface', serif;
+    }
+    .banner p{
+        color: white;
+        font-size: 3rem;
+        font-family: 'roboto', serif; 
+        padding: 2rem 0;
 
-<div>
-    <h1>Bienvenue sur HoussartGallery</h1>
+    }
+</style>
+<div class="container-fluid banner d-flex justify-content-around align-items-center ">
+    <section id="Home" class="home d-flex-colomn justify-content-center align-items-center ">
+		<h2 class="homeParalexEffect text-white">
+			Bienvenue sur
+        </h2>
+		<h1 class="homeParalexEffect text-white">
+			Houss.Art.Gallery
+        </h1>
+        <p>Plongez au cœur de l'expression artistique,<br>
+         où chaque œuvre raconte une histoire unique. <br>
+         Laissez-vous emporter dans un voyage visuel inoubliable.</p>
+	</section>  
+    <section id="Home" class="home">
+    <img src="">
+	</section>
+	<!--Home Section End-->
 </div>
+<!-- Icons Container Start-->
+<div class="container bg">
+	<section class=" row iconsContainer">
+		<div class="icons">
+			<i class="fa-solid fa-code-branch"></i>
+			<div class="content">
+				<h3>100+</h3>
+				<p>Branches</p>
+			</div>
+		</div>
+
+		<div class="icons">
+			<i class="fa-solid fa-palette"></i>
+			<div class="content">
+				<h3>5800+</h3>
+				<p>tableaux Vendus</p>
+			</div>
+		</div>
+
+		<div class="icons">
+			<i class="fa-solid fa-face-smile-wink"></i>
+			<div class="content">
+				<h3>2560+</h3>
+				<p>Clients Satisfaits</p>
+			</div>
+		</div>
+
+		<div class="icons">
+			<i class="fa-solid fa-hand-holding-heart"></i>
+			<div class="content">
+				<h3>100+</h3>
+				<p>Nouveautés</p>
+			</div>
+		</div>
+	</section>
+</div>
+
 {% endblock %}
