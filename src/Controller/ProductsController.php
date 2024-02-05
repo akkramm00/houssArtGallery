@@ -38,7 +38,7 @@ class ProductsController extends AbstractController
             'products' => $products
         ]);
     }
-
+    /************************************************************************************************************* */
     /**
      * This controller allow us to create a new product
      *
@@ -72,5 +72,82 @@ class ProductsController extends AbstractController
         return $this->render('pages/products/new.html.twig', [
             'form' => $form->createView()
         ]);
+    }
+    /******************************************************************************************** */
+
+    /**
+     * This controller allow us to edit products
+     *
+     * @param ProductsRepository $repository
+     * @param Request $request
+     * @param EntityManagerInterface $manager
+     * @param [type] $id
+     * @return Response
+     */
+    #[Route('/products/edition/{id}', 'products.edit', methods: ['GET', 'POST'])]
+    public function edit(
+        ProductsRepository $repository,
+        Request $request,
+        EntityManagerInterface $manager,
+        $id
+    ): Response {
+        $products = $repository->findOneBy(["id" => $id]);
+        $form = $this->createForm(ProductsType::class, $products);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $products = $form->getData();
+
+            $manager->persist($products);
+            $manager->flush();
+
+            $this->addFlash(
+                'success',
+                'Votre produit a été modifié avec succès !'
+            );
+
+            return $this->redirectToRoute('products');
+        }
+
+        return $this->render('pages/products/edit.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+    /************************************************************************ */
+    /**
+     * This Controller allow us to delete Products .
+     *
+     * @param EntityManagerInterface $manager
+     * @param ProductsRepository $repository
+     * @param Products $products
+     * @param [type] $id
+     * @return Response
+     */
+
+    #[Route('/products/suppression/{id}', 'products.delete', methods: ['GET'])]
+    public function delete(
+        EntityManagerInterface $manager,
+        ProductsRepository $repository,
+        Products $products,
+        $id
+    ): Response {
+        $products = $repository->findOneBy(["id" => $id]);
+        if (!$products) {
+            $this->addflash(
+                'warning',
+                'Le produit en question n\'a pas été trouvé !'
+            );
+
+            return $this->redirectToRoute('products');
+        }
+        $manager->remove($products);
+        $manager->flush();
+
+        $this->addflash(
+            'success',
+            'Le produits a été supprimé avec succès !'
+        );
+
+        return $this->redirectToRoute('products');
     }
 }
