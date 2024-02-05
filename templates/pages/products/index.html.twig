@@ -6,22 +6,18 @@
 <style>
     .banner{
         height:800px;
-        background:linear-gradient(rgba(0, 0, 0,.1),rgba(0, 0, 0,.1)),url(images/fondCRUD.jpg) center center fixed no-repeat;
+        background:linear-gradient(rgba(0, 0, 0,.5),rgba(0, 0, 0,.5)),url(images/fondHome.jpg) center center fixed no-repeat;
         background-size:cover;
     }
-    .Produits{
-        text-shadow: 1rem 1rem 1rem black;
-    }
-
 </style>
 
 <body>
-    <div class="container-fluid banner py-5">
+<div class="container-fluid banner py-5">
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center mb-4">
-            <div class="Produits col-12 d-flex justify-content-center align-items-center text-white text-center">
+            <div class="col-12 d-flex justify-content-center align-items-center text-white text-center">
             {% if not products.items is same as ([]) %}
-                <h1 class=" heading">NOS PRODUITS</h1>
+                <h1 class="heading fs-1">NOS PRODUITS</h1>
             </div>
           
                 {# read and display just one flash message type #}
@@ -30,13 +26,15 @@
                 {{ message}}
                </div>
                {% endfor %}
-
             <div class="col-10 count mt-4 text-white">
-                <h2 class="fs-5 py-2">Il y'a {{ products.getTotalItemCount}} produits au total.</h2>
+            <button class="btn-warning px-3 py-3 my-3  fs-3">
+                <a class="text-white text-decoration-none" href="{{ path('products.new') }}">Créer un produit</a>
+            </button>
+                <h2 class="fs-4 py-2">Il y'a {{ products.getTotalItemCount}} produits au total.</h2>
             </div>
 
             <div class="col-10 d-flex justify-content-center align-items-center text-center ">
-                <table class="table table-light table-striped table-hover">
+                <table class="table table-light fs-4 table-striped table-hover">
                     <thead class="text-danger">
                         <tr>
                             <th>Numéro</th>
@@ -74,11 +72,6 @@
                 </table>
 
             </div>
-            {# <div class="Produits col-10">
-                <a href="{{ path('products.new') }}" class="btn btn-primary">
-                    Nouveau Produit !
-                </a>
-            </div> #}
 
             <div class="pagination pagination-lg col-10 d-flex justify-content-center align-items-center mb-4 pb-5">
                 {{ knp_pagination_render(products) }}
@@ -89,6 +82,6 @@
 
         </div>
     </div>
-    </div>
+</div>
 </body>
 {% endblock %}

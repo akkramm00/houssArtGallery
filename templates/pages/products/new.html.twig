@@ -7,20 +7,19 @@
 <style>
     .banner{
         height:100%;
-        background:linear-gradient(rgba(0, 0, 0,.1),rgba(0, 0, 0,.1)),url(https://cdn.pixabay.com/photo/2015/10/27/16/07/canvas-1009232_1280.jpg) center fixed no-repeat;
-        background-size:cover;
-        
+        background:linear-gradient(rgba(0, 0, 0,.5),rgba(0, 0, 0,.5)),url(https://cdn.pixabay.com/photo/2016/09/04/12/38/living-room-1643855_1280.jpg) center fixed no-repeat;
+        background-size:cover; 
     }
 </style>
 
 <body>
-<div class="container-fluid banner py-4">
+<div class="container-fluid banner py-5">
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-sm-12 col-md-10">
 
             <div class="row">
-               <h1 class=" text-center text-white heading">Création d'un nouveau Produit</h1>
+               <h1 class=" text-center text-white fs-1 heading">Création d'un nouveau Produit</h1>
 
                {# read and display just one flash message type #}
                {% for message in app.flashes('success') %}
@@ -31,10 +30,10 @@
 
             </div>
 
-            <div class="row bg-warning">
+            <div class="row bg-warning py-5 mb-5">
                 {{ form_start(form) }}
  
-                <div class="form-group text-white fs-5">       
+                <div class="form-group text-white fs-4">       
                 {{ form_label(form.name) }}
                 {{ form_widget(form.name) }}
                 <div class="form-error">
@@ -42,7 +41,7 @@
                 </div>
                 </div>
 
-                <div class="form-group text-white fs-5">    
+                <div class="form-group text-white fs-4">    
                 {{ form_label(form.price) }}
                 {{ form_widget(form.price) }}
                 <div class="form-error">
@@ -50,7 +49,7 @@
                 </div>
                 </div>
 
-                <div class="form-group text-white fs-5">    
+                <div class="form-group text-white fs-4">    
                 {{ form_label(form.size) }}
                 {{ form_widget(form.size) }}
                 <div class="form-error">
@@ -58,7 +57,7 @@
                 </div>
                 </div>
 
-                <div class="form-group text-white fs-5">    
+                <div class="form-group text-white fs-4">    
                 {{ form_label(form.artist) }}
                 {{ form_widget(form.artist) }}
                 <div class="form-error">
@@ -67,7 +66,7 @@
                  </div>
         
 
-                <div class="form-group text-white fs-5">    
+                <div class="form-group text-white fs-4">    
                 {{ form_label(form.category) }}
                 {{ form_widget(form.category) }}
                 <div class="form-error">
@@ -75,7 +74,7 @@
                 </div>
                 </div>
 
-                <div class="form-group text-white fs-5">    
+                <div class="form-group text-white fs-4">    
                 {{ form_label(form.property) }}
                 {{ form_widget(form.property) }}
                 <div class="form-error">
@@ -83,7 +82,7 @@
                 </div>
                 </div>
 
-                <div class="form-group text-white fs-5">    
+                <div class="form-group text-white fs-4">    
                 {{ form_label(form.isPublic) }}
                 {{ form_widget(form.isPublic) }}
                 <div class="form-error">
@@ -92,16 +91,15 @@
                 </div>
 
 
-                <div class="form-group text-white fs-5">    
+                <div class="form-group text-white">    
                 {{ form_row(form._token) }}
                 </div>
 
-                <div class="form-group fs-5 py-3">    
+                <div class="form-group fs-5 bg-warning py-3">    
                 {{ form_row(form.submit) }}
                 </div>
                 {{ form_end(form)}}
             </div>
-
             </div>
         </div>
     </div>

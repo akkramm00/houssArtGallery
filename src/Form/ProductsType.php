@@ -129,7 +129,7 @@ class ProductsType extends AbstractType
             ])
             ->add('submit', submitType::class, [
                 'attr' => [
-                    'class' => 'btn btn-primary mt-2'
+                    'class' => 'btn btn-warning mt-2'
                 ],
                 'label' => 'Créer un nouveau produit'
             ]);

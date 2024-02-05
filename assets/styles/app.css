@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Besley:ital,wght@1,400;1,500&family=Lato&family=Merriweather&family=Redressed&family=Roboto&family=Rubik+80s+Fade&display=swap&family=Ruthie&display=swap&family=Abril+Fatface');
 
 :root {
-    --main:#ff0019;
+    --main:#c7a703;
     --border: 0.2rem solid rgba(0,0, 0, 0.5);
     --box_shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.8);
 }
@@ -37,6 +37,11 @@ html{
 .banner h1{
     font-size: 7rem;
     color: white;
+}
+.navbar a{
+    color:#c7a703;
+    font-size: 1.5rem;
+
 }
 
 .btn{
@@ -258,7 +263,8 @@ header .navbar a:hover{
     gap: 1.5rem;
     padding: 2rem;
     cursor:pointer;
-}.iconsContainer .icons i{
+}
+.iconsContainer .icons i{
     background:#ccc;
     height:5rem;
     width:5rem;
@@ -275,8 +281,12 @@ header .navbar a:hover{
     color: var(--main);
     font-size:1.5rem;
 }
+
 .iconsContainer .icons:hover{
-    background:#f5e145;
+    background: #caa502;
+    h3, p, i{
+        color:white;
+    }
 }
 /* iconsContainer Section End*/
 
