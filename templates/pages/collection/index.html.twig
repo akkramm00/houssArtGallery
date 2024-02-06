@@ -1,20 +1,85 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CollectionControlllerController!{% endblock %}
+{% block title %}HoussArtGallery- Nos Collections{% endblock %}
 
 {% block body %}
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .banner{
+        height:800px;
+        background:linear-gradient(rgba(0, 0, 0,.5),rgba(0, 0, 0,.5)),url(images/fondHome.jpg) center center fixed no-repeat;
+        background-size:cover;
+    }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<body>
+<div class="container-fluid banner py-5">
+    <div class="container">
+        <div class="row d-flex justify-content-center align-items-center mb-4">
+            <div class="col-12 d-flex justify-content-center align-items-center text-white text-center">
+            {% if not colletion.items is same as ([]) %}
+                <h1 class="heading fs-1">NOS COLLECTIONS</h1>
+            </div>
+          
+                {# read and display just one flash message type #}
+               {# {% for message in app.flashes('success') %}
+               <div class="alert alert-success mt-4">
+                {{ message}}
+               </div>
+               {% endfor %} #}
+            <div class="col-10 count mt-4 text-white">
+            <button class="btn-warning px-3 py-3 my-3  fs-3">
+                {# <a class="text-white text-decoration-none" href="{{ path('colletion.new') }}">Créer une Collection</a> #}
+            </button>
+                <h2 class="fs-4 py-2">Il y'a {{ colletion.getTotalItemCount}} Collections au total.</h2>
+            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/HoussArtGallery/src/Controller/CollectionControlllerController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/HoussArtGallery/templates/collection_controlller/index.html.twig</code></li>
-    </ul>
+            <div class="col-10 d-flex justify-content-center align-items-center text-center ">
+                <table class="table table-light fs-4 table-striped table-hover">
+                    <thead class="text-warning">
+                        <tr>
+                            <th>Numéro</th>
+                            <th>Nom</th>
+                            <th>Artiste</th>
+                            <th>Catégorie</th>
+                            <th>Prix</th>
+                            <th>Favorite</th>
+                            <th>Date de Création</th>
+                            <th>Edition</th>
+                            <th>Suppression</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for colletion in colletion %}
+                           <tr>
+                                <th  class="d-flex justify-content-center align-items-center text-warning">{{ colletion.id }}</th>
+                                <th>{{ colletion.name }}</th>
+                                <td>{{ colletion.artist }}</td>
+                                <td>{{ colletion.category }}</td>
+                                <td>{{ colletion.price }}</td>
+                                <td>{{ colletion.isFavorite }}</td>
+                                <td>{{ colletion.createdAt|date('d/m/Y') }}</td>
+                                <td>
+                                    {# <a href="{{ path('colletion.edit', { id:colletion.id }) }}" class="text-warning">Modifier</a> #}
+                                </td>
+                                <td>
+                                    {# <a href="{{ path('colletion.delete', { id:colletion.id }) }}" class="text-danger">supprimer</a> #}
+                                </td>
+                           </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="pagination pagination-lg col-10 d-flex justify-content-center align-items-center mb-4 pb-5">
+                {{ knp_pagination_render(colletion) }}
+            </div>
+            {% else %}
+            <h4> Il n'y a pas de colletion </H4>
+            {% endif %}
+
+        </div>
+    </div>
 </div>
+</body>
 {% endblock %}
