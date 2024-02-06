@@ -35,7 +35,7 @@
 
             <div class="col-10 d-flex justify-content-center align-items-center text-center ">
                 <table class="table table-light fs-4 table-striped table-hover">
-                    <thead class="text-danger">
+                    <thead class="text-warning">
                         <tr>
                             <th>Numéro</th>
                             <th>Nom</th>
@@ -52,7 +52,7 @@
                     <tbody>
                         {% for products in products %}
                            <tr>
-                                <th  class="d-flex justify-content-center align-items-center text-danger">{{ products.id }}</th>
+                                <th  class="d-flex justify-content-center align-items-center text-warning">{{ products.id }}</th>
                                 <th>{{ products.name }}</th>
                                 <td>{{ products.price }}</td>
                                 <td>{{ products.size }}</td>
@@ -61,10 +61,10 @@
                                 <td>{{ products.isPublic }}</td>
                                 <td>{{ products.createdAt|date('d/m/Y') }}</td>
                                 <td>
-                                    <a href="{{ path('products.edit', { id:products.id }) }}">Modifier</a>
+                                    <a href="{{ path('products.edit', { id:products.id }) }}" class="text-warning">Modifier</a>
                                 </td>
                                 <td>
-                                    <a href="{{ path('products.delete', { id:products.id }) }}">supprimer</a>
+                                    <a href="{{ path('products.delete', { id:products.id }) }}" class="text-danger">supprimer</a>
                                 </td>
                            </tr>
                         {% endfor %}
