@@ -40,9 +40,16 @@ html{
 }
 .navbar a{
     color:#c7a703;
-    font-size: 1.5rem;
-
+    font-size: 1.2rem;
+    font-family:'roboto', serif;
+    margin:0 2rem;
 }
+.navbar a:hover{
+    color:#c7a703;
+    border-bottom:2px solid #c7a703;
+    transition: border-bottom 0.4s ease-in-out;
+}
+
 
 .btn{
     background: var(--main);
