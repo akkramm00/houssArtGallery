@@ -112,6 +112,15 @@ class CollectionController extends AbstractController
         ]);
     }
     /************************************************************************ */
+    /**
+     * This controller allow us to delete collections
+     *
+     * @param EntityManagerInterface $manager
+     * @param ColletionRepository $repository
+     * @param Colletion $colletion
+     * @param [type] $id
+     * @return Response
+     */
     #[Route('/collection/suppression/{id}', 'collection.delete', methods: ['GET', 'POST'])]
     public function delete(
         EntityManagerInterface $manager,
