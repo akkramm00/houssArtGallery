@@ -5,10 +5,20 @@
 {% block body %}
 
 <style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
     .banner{
-        height:100%;
+        height:760px;
         background:linear-gradient(rgba(0, 0, 0,.5),rgba(0, 0, 0,.5)),url(https://cdn.pixabay.com/photo/2016/09/04/12/38/living-room-1643855_1280.jpg) center fixed no-repeat;
         background-size:cover; 
+    }
+    .bg{
+        background-color: rgba(255, 255, 128, .8);
+        padding: 2rem;
+        border-radius: 1rem;
     }
 </style>
 
@@ -30,7 +40,7 @@
 
             </div>
 
-            <div class="row bg-warning py-5 mb-5">
+            <div class="row bg py-5 mb-5">
                 {{ form_start(form) }}
  
                 <div class="form-group text-white fs-4">       
