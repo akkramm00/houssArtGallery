@@ -20,15 +20,15 @@
                 <h1 class="heading fs-1">NOS COLLECTIONS</h1>
             </div>
           
-                {# read and display just one flash message type #}
-               {# {% for message in app.flashes('success') %}
+                {#read and display just one flash message type #}
+               {% for message in app.flashes('success') %}
                <div class="alert alert-success mt-4">
                 {{ message}}
                </div>
-               {% endfor %} #}
+               {% endfor %}
             <div class="col-10 count mt-4 text-white">
             <button class="btn-warning px-3 py-3 my-3  fs-3">
-                {# <a class="text-white text-decoration-none" href="{{ path('colletion.new') }}">Créer une Collection</a> #}
+                <a class="text-white text-decoration-none" href="{{ path('collection.new') }}">Créer une Collection</a>
             </button>
                 <h2 class="fs-4 py-2">Il y'a {{ colletion.getTotalItemCount}} Collections au total.</h2>
             </div>
@@ -59,10 +59,10 @@
                                 <td>{{ colletion.isFavorite }}</td>
                                 <td>{{ colletion.createdAt|date('d/m/Y') }}</td>
                                 <td>
-                                    {# <a href="{{ path('colletion.edit', { id:colletion.id }) }}" class="text-warning">Modifier</a> #}
+                                    <a href="{{ path('collection.edit', { id:colletion.id }) }}" class="text-warning">Modifier</a>
                                 </td>
                                 <td>
-                                    {# <a href="{{ path('colletion.delete', { id:colletion.id }) }}" class="text-danger">supprimer</a> #}
+                                    <a href="{{ path('collection.delete', { id:colletion.id }) }}" class="text-danger">supprimer</a>
                                 </td>
                            </tr>
                         {% endfor %}
