@@ -49,8 +49,6 @@ html{
     border-bottom:2px solid #c7a703;
     transition: 0.2s ;
 }
-
-
 .btn{
     background: var(--main);
     padding: 0.8rem 3rem;
@@ -603,60 +601,6 @@ footer a:hover{
      transform: translateX(-100px);
   }
 /* Section Footer End */
-
-/* Theme Toggle */
-.themeToggle {
-    position: fixed;
-    top: 10rem;
-    right: -10rem;
-    background:transparent;
-    text-align: center;
-    width: 10rem;
-    z-index: 1000;
-}
-.themeToggle.active {
-    right: 0;
-}
-.themeToggle h3 {
-    color: #0c0c0c;
-    font-size: 1.5rem;
-    padding: 2rem 1rem;
-    
-
-}
-.themeToggle .buttons {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-}
-.themeToggle .themeBtn {
-    height: 5rem;
-    width: 5rem;
-    cursor: pointer;
-    border-radius: 50%;
-}
-.themeToggle .ToggleBtn {
-    position: absolute;
-    top: 0.3rem;
-    left: -5.9rem;
-    padding: 1.3rem 1.5rem;
-    background: #000;
-    cursor: pointer;
-}
-.themeToggle .ToggleBtn i {
-    color: #fff;
-    font-size: 3rem;
-    animation: spin 1.5s linear infinite;
-}
-@keyframes spin {
-    0% {
-        transform: rotate(360deg);
-    }
-}
-/* Theme Toggle */
 
 /* Media query */
 @media (max-width: 991px) {
