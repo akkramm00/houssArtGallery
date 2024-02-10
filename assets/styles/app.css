@@ -25,30 +25,7 @@ html{
     scroll-behavior:smooth;
     scroll-padding-top: 7rem;
 }
-.banner{
-    height:800px;
-    background-image:linear-gradient(rgba(0, 0, 0,.1),rgba(0, 0, 0,.1)),url(https://cdn.pixabay.com/photo/2016/09/04/12/38/living-room-1643855_1280.jpg) center center fixed no-repeat;
-    background-size:cover;
-}
-.banner h2{
-    font-size: 5rem;
-    color: white;
-}
-.banner h1{
-    font-size: 7rem;
-    color: white;
-}
-.navbar a{
-    color:#c7a703;
-    font-size: 1.2rem;
-    font-family:'roboto', serif;
-    margin:0 2rem;
-}
-.navbar a:hover{
-    color:#c7a703;
-    border-bottom:2px solid #c7a703;
-    transition: 0.2s ;
-}
+
 .btn{
     background: var(--main);
     padding: 0.8rem 3rem;
@@ -70,7 +47,6 @@ html{
 }
 /*  Header/Navbar Start  */
 header{
-    z-index: 10000;
     position: fixed;
     top: 0;
     left: 0;
@@ -82,21 +58,12 @@ header{
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+}
 
-}
-header .logo{
-    color: #000;
-    font-size: 2.5rem;
-    font-weight: 700;
-    text-decoration: none;
-    text-shadow: 1rem 1rem 1rem var(--main);
-}
-header .logo span{
-    color: var(--main);
-}
 header .navbar a{
     font-size: 1.4rem;
-    color: #2e0202;
+    font-family: roboto;
+    color: #373535;
     margin: 0 1rem;
     text-decoration: none;
 }
@@ -105,7 +72,7 @@ header .navbar a:hover{
     color: var(--main);
     padding-bottom:0.8rem;
     border-bottom: 0.3rem solid var(--main);
-    transition: 0.5s;
+    transition: 0.3s;
 }
  .dropdown .Action{
     width: 10rem;
@@ -134,8 +101,11 @@ header .navbar a:hover{
 #LoginBtn .btn{
     margin-top: 0;
 }
+#LoginBtn .btn:hover{
+    color: #fff;
+}
 #LoginBtn i {
-    color: var(--main);
+    color: #fff;
     font-size: 2.5rem;
     display:none;
 }
@@ -242,11 +212,8 @@ header .navbar a:hover{
 }
 .home img {
     width: 100%;
-    height: 50%;
+    height: 60%;
     background-color: transparent;
-    
-   
-
 }
 /* home Section End */
 
@@ -596,10 +563,20 @@ footer a:hover{
     font-style:italic ;
 }
 
-  .footerL .logo span:hover{
+.footerL .logo span:hover{
     transform: translateX(100px);
      transform: translateX(-100px);
-  }
+}
+.confid .termes a,
+.copyR a{
+    font-family: roboto;
+    color:#ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.confid a:hover{
+    border-bottom: solid 2px white;
+}
 /* Section Footer End */
 
 /* Media query */
@@ -680,6 +657,7 @@ footer a:hover{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        font-family: roboto;
     }
     footer .relative{
         position: relative;
